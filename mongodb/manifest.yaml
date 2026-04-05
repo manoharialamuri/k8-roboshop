@@ -20,10 +20,10 @@ spec:
   template:
     metadata:
     namespace: roboshop
-      labels:
-        project: roboshop
-        tier: db
-        component: mongodb
+    labels:
+      project: roboshop
+      tier: db
+      component: mongodb
     spec:
       containers:
       - name: mongodb
