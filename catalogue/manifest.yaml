@@ -43,7 +43,7 @@ spec:
         image: manohari07/catalogue:1.0.0
         envFrom:
         - configMapRef:
-          name: catalogue
+            name: catalogue
 
 ---
 apiVersion: v1
