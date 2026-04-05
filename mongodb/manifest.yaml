@@ -19,10 +19,10 @@ spec:
   # This is pod definition, pod is subset of replicaset
   template:
     metadata:
-    labels:
-      project: roboshop
-      tier: db
-      component: mongodb
+      labels:
+        project: roboshop
+        tier: db
+        component: mongodb
     spec:
       containers:
       - name: mongodb
