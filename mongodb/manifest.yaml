@@ -19,6 +19,7 @@ spec:
   # This is pod definition, pod is subset of replicaset
   template:
     metadata:
+    namespace: roboshop
       labels:
         project: roboshop
         tier: db
