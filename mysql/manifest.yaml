@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: mysql
   namespace: roboshop
+data:
+  MYSQL_ROOT_PASSWORD: Um9ib1Nob3BAMQo=
   # these labels are replicaset labels
   labels:
     project: roboshop
