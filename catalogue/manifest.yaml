@@ -10,7 +10,6 @@ metadata:
 data:
   MONGO: "true"
   MONGO_URL: "mongodb://mongodb:27017/catalogue"
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -40,32 +39,30 @@ spec:
     spec:
       containers:
       - name: catalogue
-        image: manohari07/catalogue:1.0.0 
+        image: joindevops/catalogue:1.4.0
         imagePullPolicy: Always # safe to pull everytime, there may be images with same version rebuilt and pushed
         resources:
-          # soft limit
           requests:
-            memory: "128Mi" #RAM
-            cpu: "100m" #CPU
-          # HARD LIMIT
-          limits:
+            cpu: "100m"
             memory: "128Mi"
-            cpu: "150m"
+          limits:
+            cpu: "100m"
+            memory: "128Mi"
         readinessProbe:
-            # httpGet:
-            #   path: /health
-            #   port: 8080
+          # httpGet:
+          #   path: /health
+          #   port: 8080
           tcpSocket:
             port: 8080
           failureThreshold: 2
           periodSeconds: 10
           initialDelaySeconds: 15
         livenessProbe:
-        httpGet:
-          path: /health
-          port: 8080
-        failureThreshold: 2
-        periodSeconds: 10
+          httpGet:
+            path: /health
+            port: 8080
+          failureThreshold: 2
+          periodSeconds: 10
         envFrom:
         - configMapRef:
             name: catalogue
