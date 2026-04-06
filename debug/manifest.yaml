@@ -7,4 +7,5 @@ spec:
   containers:
   - name: debug
     image: manohari07/debug:1.4.0
+    imagePullPolicy: Always
 #it automatically opens port number 80
