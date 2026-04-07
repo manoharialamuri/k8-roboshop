@@ -1,12 +1,12 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: mysql-secret
-  namespace: roboshop
-type: Opaque
-data:
-  MYSQL_ROOT_PASSWORD: Um9ib1Nob3BAMQ==
----
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: mysql-secret
+#   namespace: roboshop
+# type: Opaque
+# data:
+#   MYSQL_ROOT_PASSWORD: Um9ib1Nob3BAMQ==
+# ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -36,12 +36,12 @@ spec:
       containers:
       - name: mysql
         image: mysql:8.0
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-secret
-              key: MYSQL_ROOT_PASSWORD
+        # env:
+        # - name: MYSQL_ROOT_PASSWORD
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: mysql-secret
+        #       key: MYSQL_ROOT_PASSWORD
 
 ---
 apiVersion: v1
