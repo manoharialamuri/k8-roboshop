@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql:8.0
+        image: manohari07/mysql:1.4.0
         imagePullPolicy: Always
         # env:
         # - name: MYSQL_ROOT_PASSWORD
@@ -64,3 +64,5 @@ spec:
   - protocol: TCP
     port: 3306 # servie port
     targetPort: 3306 # container port
+
+
