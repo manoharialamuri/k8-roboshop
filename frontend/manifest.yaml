@@ -133,7 +133,7 @@ spec:
           # by default it mounts and thinks as directory
           mountPath: "/etc/nginx/nginx.conf"
           subPath: nginx.conf
-          #readOnly: true
+          readOnly: true
 ---
 apiVersion: v1
 kind: Service
@@ -145,7 +145,7 @@ metadata:
     tier: frontend
     component: frontend
 spec:
-  #type: LoadBalancer
+  type: LoadBalancer
   selector:
     # labels are used as selectors
     project: roboshop
